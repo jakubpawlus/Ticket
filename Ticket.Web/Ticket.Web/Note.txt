@@ -1,0 +1,14 @@
+﻿Brak warst ! ma to być prosty projekt który zostanie szybko wykonany 
+
+
+ORM - EF podejscie CodeFirst 
+Oznaczenie folderów: 
+Reposiotries - repozytoria zawierające pytania do bazy i logikę biznesową  domain objects  https://www.talksharp.com/increase-enity-framework-performance
+Entiy - baza danych w podejści code first 
+Sql - skrypty do utworzenia bazy 
+
+
+Provider do użytkowników simplemembership 
+ 
+
+
