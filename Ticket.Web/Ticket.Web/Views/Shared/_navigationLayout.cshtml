@@ -1,0 +1,34 @@
+﻿<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+           
+            <li>
+                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Administration<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        @Html.ActionLink("Users", "Users","Administration")
+                     
+                    </li>
+                    <li>
+                        @Html.ActionLink("Settings", "Settings", "Administration")
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i>Ticket's<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        @Html.ActionLink("Current ticket's", "Tickets", "Ticket") 
+                    </li>
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Ticket")
+                    </li>
+                </ul>
+            </li>
+           
+        </ul>
+    </div>
+</div>
