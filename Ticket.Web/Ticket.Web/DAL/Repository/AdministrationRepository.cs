@@ -30,5 +30,19 @@ namespace Ticket.Web.DAL.Repository
             var userView = new User(user);
             return userView;
         }
+
+        public void Update(TicketContext context, User user)
+        {
+            var userdb = context.Users.FirstOrDefault(z => z.UserId == user.UserId);
+            if (userdb == null)
+            {
+                userdb.FirstName = userdb.FirstName;
+                userdb.UserName = userdb.UserName;
+                userdb.Surname = userdb.Surname;
+                userdb.Email = userdb.Email;
+                userdb.Phone = userdb.Phone;
+                context.SaveChanges();
+            }
+        }
     }
 }

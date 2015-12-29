@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ticket.Web.DAL.Repository.Model.Administration;
 
 namespace Ticket.Web.Controllers
 {
@@ -20,7 +21,14 @@ namespace Ticket.Web.Controllers
         public ActionResult EditUser(int userId)
         {
             var user = UnitOfWork.AdministrationRepository.GetUser(UnitOfWork.TicketContext, userId);
-            return View("EditUser", user);
+            return PartialView("_editUserPartial", user);
+        }
+
+        [HttpPost]
+        public ActionResult EditUser(User user)
+        {
+            UnitOfWork.AdministrationRepository.Update(UnitOfWork.TicketContext, user);
+            return RedirectToAction("Users");
         }
     }
 }
