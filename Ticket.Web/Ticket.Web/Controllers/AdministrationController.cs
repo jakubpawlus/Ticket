@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ticket.Web.DAL.Repository.Model.Administration;
+using WebMatrix.WebData;
 
 namespace Ticket.Web.Controllers
 {
@@ -30,5 +31,23 @@ namespace Ticket.Web.Controllers
             UnitOfWork.AdministrationRepository.Update(UnitOfWork.TicketContext, user);
             return RedirectToAction("Users");
         }
+
+        public ActionResult CreateUser()
+        {
+            if (!WebSecurity.Initialized)
+            {
+                WebSecurity.InitializeDatabaseConnection("TicketDataBaseContext", "User", "UserId", "UserName", autoCreateTables: true);
+            }
+            var user = new CreateUser();
+            return PartialView("_createUserPartial", user); 
+        }
+
+        [HttpPost]
+        public ActionResult CreateUser(CreateUser user)
+        {
+            UnitOfWork.AdministrationRepository.CreateUser(UnitOfWork.TicketContext, user);
+            return RedirectToAction("Users");
+        }
+
     }
 }

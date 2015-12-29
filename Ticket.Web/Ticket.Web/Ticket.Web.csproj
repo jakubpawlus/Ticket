@@ -149,6 +149,7 @@
     <Compile Include="DAL\Entity\UserEntity.cs" />
     <Compile Include="DAL\Repository\AdministrationRepository.cs" />
     <Compile Include="DAL\Repository\Model\Administration\User.cs" />
+    <Compile Include="DAL\Repository\Model\Administration\UserCreate.cs" />
     <Compile Include="DAL\Repository\TicketRepository.cs" />
     <Compile Include="DAL\Repository\UnitOfWork.cs" />
     <Compile Include="Filters\InitializeSimpleMembership.cs" />
@@ -291,6 +292,7 @@
     <Content Include="Views\Administration\Users.cshtml" />
     <Content Include="Views\Ticket.cshtml" />
     <Content Include="Views\Administration\_editUserPartial.cshtml" />
+    <Content Include="Views\Administration\_createUserPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

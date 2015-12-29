@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using Ticket.Web.DAL.Repository.Model.Administration;
 using Ticket.Web.Entity;
+using WebMatrix.WebData;
 
 namespace Ticket.Web.DAL.Repository
 {
     public class AdministrationRepository
     {
-
         public List<User> GetUsers(TicketContext context)
         {
             var user = context.Users.Select(item => new User() 
@@ -43,6 +43,11 @@ namespace Ticket.Web.DAL.Repository
                 userdb.Phone = userdb.Phone;
                 context.SaveChanges();
             }
+        }
+
+        public void CreateUser(TicketContext context, CreateUser user)
+        {
+            WebSecurity.CreateUserAndAccount(user.UserName, user.Password, new { FirstName = user.FirstName, Surname = user.Surname, Email = user.Email, Phone = user.Phone });
         }
     }
 }

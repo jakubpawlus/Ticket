@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-10"> </div>
                 <div class="col-lg-2 text-right " style="margin-bottom: 7px;">
-                    <a href="" class=" btn btn-default">Create user</a>
+                    <button class="btn btn-default" id="createUser">Create user</button>
                 </div>
             </div>
                 <div class="table-responsive">
@@ -49,13 +49,16 @@
     <div id="editUser">
 
     </div>
+    <div id="creatUser">
+
+    </div>
 
     @section scripts
     {
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $(".edit_user").click(function () {
+            $('.edit_user').click(function () {
                 var id = $(this).attr("data-id");
 
                 $.ajax({
@@ -67,6 +70,22 @@
                         $('#editUser').html(response);
 
                         $('#editUserModal').modal();
+
+                    }
+                });
+            });
+
+            $('#createUser').click(function () {
+              
+                $.ajax({
+                    url: 'CreateUser',
+                    dataType: 'html',
+                    type: 'GET',
+                    success: function (response) {
+                        console.log(response);
+                        $('#creatUser').html(response);
+
+                        $('#createUserModal').modal();
 
                     }
                 });
