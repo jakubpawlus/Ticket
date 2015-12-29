@@ -18,19 +18,16 @@ namespace Ticket.Web.Entity
         }
         
         public DbSet<UserEntity> Users {get;set;}
-       // public DbSet<TicketEntity> Tickets { get; set; }
-
+        public DbSet<TicketEntity> Tickets { get; set; }
+        public DbSet<TicketDiscussionEntity> TicketDiscussions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Configurations.Add(new UserMap());
-           // modelBuilder.Configurations.Add(new TicketMap());
-            //modelBuilder.Configurations.Add(new AdditionalDataMap());
-            //modelBuilder.Configurations.Add(new AirLineMap());
-            //modelBuilder.Configurations.Add(new AirportMap());
-            //modelBuilder.Configurations.Add(new AllowedCashboxMap());
-            //modelBuilder.Configurations.Add(new aspnet_ApplicationsMap());
+            modelBuilder.Configurations.Add(new TicketMap());
+            modelBuilder.Configurations.Add(new TicketDiscussionMap());
+     
         }
     }
 }

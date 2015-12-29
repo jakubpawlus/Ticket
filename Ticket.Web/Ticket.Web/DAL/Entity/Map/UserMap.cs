@@ -34,6 +34,7 @@ namespace Ticket.Web.DAL.Entity.Map
         //                m.MapRightKey("DocumentId");
         //            });
 
+          
         //    HasOptional(t => t.AdditionalDataParent)
         //        .WithMany(t => t.AdditionalDataChildren)
         //        .HasForeignKey(d => d.AdditionalDataId);

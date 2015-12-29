@@ -142,9 +142,11 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="DAL\Entity\Map\TicketDiscussionMap.cs" />
     <Compile Include="DAL\Entity\Map\TicketMap.cs" />
     <Compile Include="DAL\Entity\Map\UserMap.cs" />
     <Compile Include="DAL\Entity\TicketContext.cs" />
+    <Compile Include="DAL\Entity\TicketDiscussion.cs" />
     <Compile Include="DAL\Entity\TicketEntity.cs" />
     <Compile Include="DAL\Entity\UserEntity.cs" />
     <Compile Include="DAL\Repository\AdministrationRepository.cs" />
