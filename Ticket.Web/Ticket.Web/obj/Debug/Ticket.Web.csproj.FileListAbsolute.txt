@@ -30,3 +30,10 @@ C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Helpe
 C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Helpers.xml
 C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\obj\Debug\Ticket.Web.csprojResolveAssemblyReference.cache
 C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\Microsoft.Web.Helpers.dll
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\Microsoft.CSharp.dll
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Http.dll
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Routing.dll
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Http.xml
+C:\Users\kuba\Desktop\Projekty\Ticket\Ticket.Web\Ticket.Web\bin\System.Web.Http.WebHost.xml

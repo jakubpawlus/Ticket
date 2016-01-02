@@ -1,0 +1,42 @@
+﻿@using Ticket.Web.DAL.Repository.Model.Ticket
+@model List<TicketShortModel>
+  
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Ticket List</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th> Data utworzenia</th>
+                            <th> Tytuł</th>
+                            <th> Utworzył</th>
+                            <th> Przypisane</th>
+                            <th> Status</th>
+                            <th> Piorytet</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in @Model)
+                        {
+                            <tr>
+                                <td>@item.DateCreated.ToString("yyyy-MM-dd")</td>
+                                <td>@item.Title</td>
+                                <td>@item.CreatedBy</td>
+                                <td>@item.AssignTo</td>
+                                <td>@item.Status.ToString()</td>
+                                <td>@item.Priority.ToString()</td>
+                                <td><a href="Details?id=@item.Id" class=" btn btn-default" >Details</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

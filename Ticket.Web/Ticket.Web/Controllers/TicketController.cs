@@ -45,6 +45,7 @@ namespace Ticket.Web.Controllers
         public ActionResult AddComment(int ticketId, string comment)
         {
             UnitOfWork.TicketRepository.CreateCommnet(UnitOfWork, comment, ticketId);
+            UnitOfWork.Context.SaveChanges();
             return RedirectToAction("Details", new { id = ticketId });
         }
     }

@@ -48,7 +48,7 @@ namespace Ticket.Web
             "~/Content/bootstrap.css",
             "~/Content/metisMenu.css",
             "~/Content/timeline.css",
-                        "~/Content/sb-admin-2.css",
+             "~/Content/sb-admin-2.css",
             "~/Content/morris.css",
             "~/Content/font-awesome.css"
             ));

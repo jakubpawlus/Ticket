@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TicketDataBaseContext-Web.config Connection String" description="TicketDataBaseContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=QUBA\SQLEXPRESS;initial catalog=Ticket;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\kuba\\Desktop\\Projekty\\Ticket\\Ticket\.Web\\Ticket\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TicketDataBaseContext']/@connectionString" />
+  </parameter>
+</parameters>
