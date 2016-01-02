@@ -10,9 +10,9 @@ namespace Ticket.Web.DAL.Repository
 {
     public class AdministrationRepository
     {
-        public List<User> GetUsers(TicketContext context)
+        public List<User> GetUsers(UnitOfWork unit)
         {
-            var user = context.Users.Select(item => new User() 
+            var user = unit.Context.Users.Select(item => new User() 
             {
                 UserId = item.UserId,
                 UserName = item.UserName,
@@ -24,16 +24,16 @@ namespace Ticket.Web.DAL.Repository
             return user;
         }
 
-        public User GetUser(TicketContext context, int userId)
+        public User GetUser(UnitOfWork unit, int userId)
         {
-            var user = context.Users.FirstOrDefault(z => z.UserId == userId);
+            var user = unit.Context.Users.FirstOrDefault(z => z.UserId == userId);
             var userView = new User(user);
             return userView;
         }
 
-        public void Update(TicketContext context, User user)
+        public void Update(UnitOfWork unit, User user)
         {
-            var userdb = context.Users.FirstOrDefault(z => z.UserId == user.UserId);
+            var userdb = unit.Context.Users.FirstOrDefault(z => z.UserId == user.UserId);
             if (userdb == null)
             {
                 userdb.FirstName = userdb.FirstName;
@@ -41,11 +41,11 @@ namespace Ticket.Web.DAL.Repository
                 userdb.Surname = userdb.Surname;
                 userdb.Email = userdb.Email;
                 userdb.Phone = userdb.Phone;
-                context.SaveChanges();
+                unit.Context.SaveChanges();
             }
         }
 
-        public void CreateUser(TicketContext context, CreateUser user)
+        public void CreateUser(UnitOfWork unit, CreateUser user)
         {
             WebSecurity.CreateUserAndAccount(user.UserName, user.Password, new { FirstName = user.FirstName, Surname = user.Surname, Email = user.Email, Phone = user.Phone });
         }

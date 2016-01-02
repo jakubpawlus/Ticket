@@ -10,26 +10,39 @@ namespace Ticket.Web.DAL.Entity.Map
     {
         public TicketMap()
         {
-            HasKey(t => t.Id);
+            // Primary Key
+            this.HasKey(t => t.Id);
+
+            // Properties
+            this.Property(t => t.Title)
+                .IsRequired()
+                .HasMaxLength(255);
+
+            this.Property(t => t.Description)
+                .IsRequired()
+                .HasMaxLength(3000);
 
             // Table & Column Mappings
-            ToTable("Ticket");
-            Property(t => t.Id).HasColumnName("Id");
-            Property(t => t.AssignToId).HasColumnName("AssignToId");
-            Property(t => t.CreatedById).HasColumnName("CreatedById");
-            Property(t => t.DateCreated).HasColumnName("DateCreated");
-            Property(t => t.Description).HasColumnName("Description");
-            Property(t => t.IsClose).HasColumnName("IsClose");
-            Property(t => t.ModifyDate).HasColumnName("ModifyDate");
-            Property(t => t.Priority).HasColumnName("Priority");
-            Property(t => t.Status).HasColumnName("Status");
-            Property(t => t.Title).HasColumnName("Title");
+            this.ToTable("Ticket");
+            this.Property(t => t.Id).HasColumnName("Id");
+            this.Property(t => t.DateCreated).HasColumnName("DateCreated");
+            this.Property(t => t.Title).HasColumnName("Title");
+            this.Property(t => t.Description).HasColumnName("Description");
+            this.Property(t => t.CreatedById).HasColumnName("CreatedById");
+            this.Property(t => t.AssignToId).HasColumnName("AssignToId");
+            this.Property(t => t.Status).HasColumnName("Status");
+            this.Property(t => t.Priority).HasColumnName("Priority");
+            this.Property(t => t.IsClose).HasColumnName("IsClose");
+            this.Property(t => t.ModifyDate).HasColumnName("ModifyDate");
 
-            HasRequired(z => z.CreatedBy).WithMany(z => z.Tickets).HasForeignKey(z => z.CreatedById);
+            // Relationships
+            this.HasRequired(t => t.AssignTo)
+                .WithMany(t => t.Tickets)
+                .HasForeignKey(d => d.AssignToId);
+            this.HasRequired(t => t.CreatedBy)
+                .WithMany(t => t.Tickets1)
+                .HasForeignKey(d => d.CreatedById);
 
-            HasRequired(z => z.AssignTo).WithMany(z => z.Tickets).HasForeignKey(z => z.AssignToId);
-     
         }
-
     }
 }

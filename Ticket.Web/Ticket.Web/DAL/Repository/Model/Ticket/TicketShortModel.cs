@@ -13,8 +13,11 @@ namespace Ticket.Web.DAL.Repository.Model.Ticket
         public string Description { get; set; }
         public string CreatedBy { get; set; }
         public string AssignTo{ get; set; }
+        public int AssignToId { get; set; }
         public StatusEnum Status { get; set; }
+        public int StatusId { get; set; }
         public PiorityEnum Priority { get; set; }
+        public int PriorityId { get; set; }
         public bool IsClose { get; set; }
         public DateTime ModifyDate { get; set; }
     }

@@ -15,20 +15,20 @@ namespace Ticket.Web.Controllers
 
         public ActionResult Users()
         {
-            var users = UnitOfWork.AdministrationRepository.GetUsers(UnitOfWork.TicketContext);
+            var users = UnitOfWork.AdministrationRepository.GetUsers(UnitOfWork);
             return View("Users", users);
         }
 
         public ActionResult EditUser(int userId)
         {
-            var user = UnitOfWork.AdministrationRepository.GetUser(UnitOfWork.TicketContext, userId);
+            var user = UnitOfWork.AdministrationRepository.GetUser(UnitOfWork, userId);
             return PartialView("_editUserPartial", user);
         }
 
         [HttpPost]
         public ActionResult EditUser(User user)
         {
-            UnitOfWork.AdministrationRepository.Update(UnitOfWork.TicketContext, user);
+            UnitOfWork.AdministrationRepository.Update(UnitOfWork, user);
             return RedirectToAction("Users");
         }
 
@@ -45,7 +45,7 @@ namespace Ticket.Web.Controllers
         [HttpPost]
         public ActionResult CreateUser(CreateUser user)
         {
-            UnitOfWork.AdministrationRepository.CreateUser(UnitOfWork.TicketContext, user);
+            UnitOfWork.AdministrationRepository.CreateUser(UnitOfWork, user);
             return RedirectToAction("Users");
         }
 

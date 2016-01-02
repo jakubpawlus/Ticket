@@ -22,31 +22,8 @@ namespace Ticket.Web.DAL.Entity.Map
             Property(t => t.Surname).HasColumnName("Surname");
             Property(t => t.Email).HasColumnName("Email");
             Property(t => t.Phone).HasColumnName("Phone");
-       
 
-        //    // Relationships
-        //    HasMany(t => t.Documents)
-        //        .WithMany(t => t.AdditionalDatas)
-        //        .Map(m =>
-        //            {
-        //                m.ToTable("DocumentAdditionalData");
-        //                m.MapLeftKey("AdditionalDataId");
-        //                m.MapRightKey("DocumentId");
-        //            });
-
-          
-        //    HasOptional(t => t.AdditionalDataParent)
-        //        .WithMany(t => t.AdditionalDataChildren)
-        //        .HasForeignKey(d => d.AdditionalDataId);
-        //    HasOptional(t => t.OrderItem)
-        //        .WithMany(t => t.AdditionalDatas)
-        //        .HasForeignKey(d => d.OrderItemId);
-        //    HasOptional(t => t.UserProfile)
-        //        .WithMany(t => t.AdditionalDatas)
-        //        .HasForeignKey(d => d.UserProfileId);
-        //    HasOptional(t => t.OrderItemGroup)
-        //        .WithMany(t => t.AdditionalDatas)
-        //        .HasForeignKey(d => d.OrderItemGroupId);
+           
         }
     }
 }

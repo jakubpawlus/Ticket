@@ -8,15 +8,15 @@ namespace Ticket.Web.DAL.Repository
 {
     public class UnitOfWork :IDisposable
     {
-        private TicketContext ticketContext;
-        public TicketContext TicketContext
+        private TicketContext context;
+        public TicketContext Context
         {
             get
             {
-                if (ticketContext == null)
-                    ticketContext = new TicketContext();
+                if (context == null)
+                    context = new TicketContext();
 
-                return ticketContext;
+                return context;
             }
         }
 
@@ -44,10 +44,28 @@ namespace Ticket.Web.DAL.Repository
             }
         }
 
+        private int userId;
+        public int UserId
+        {
+            get 
+            {
+                if(userId == null || userId == 0)
+                {
+                    if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        var user = Context.Users.FirstOrDefault(z => z.UserName.Equals(HttpContext.Current.User.Identity.Name));
+                        userId = user.UserId;
+                    }
+                }
+                return userId;
+            }
+      
+        }
+
         public void Dispose()
         {
-            if(ticketContext != null)
-                ticketContext.Dispose();
+            if(context != null)
+                context.Dispose();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Ticket.Web.DAL.Entity
         public string Phone { get; set; }
 
         public virtual ICollection<TicketEntity> Tickets { get; set; }
+        public virtual ICollection<TicketEntity> Tickets1 { get; set; }
         public virtual ICollection<TicketDiscussionEntity> TicketDiscussions { get; set; }
     }
 }
