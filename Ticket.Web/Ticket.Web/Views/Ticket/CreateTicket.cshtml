@@ -11,13 +11,13 @@
         @using (Html.BeginForm("Create", "Ticket", FormMethod.Post, new { @class = "form-horizontal" }))
         {
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Tytuł:</label>
+                <label class="control-label col-sm-2" for="email">Title:</label>
                 <div class="col-sm-10">
                     <input type="text" name="Title" value="@Model.Title" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Opis:</label>
+                <label class="control-label col-sm-2" for="email">Description:</label>
                 <div class="col-sm-10">
                     <textarea rows="4" cols="50" name="Description" class="form-control"></textarea>
                 </div>
@@ -26,10 +26,10 @@
                 <label class="control-label col-sm-2" for="email">Status:</label>
                 <div class="col-sm-10">
                     <select name="@Model.StatusId" class="form-control">
-                        <option value="0">Create</option>
-                        <option value="1">Open</option>
-                        <option value="2">Resolve</option>
-                        <option value="3">Close</option>
+                        <option value="0">Created</option>
+                        <option value="1">Opened</option>
+                        <option value="2">Resolved</option>
+                        <option value="3">Closed</option>
                     </select>
                 </div>
             </div>
