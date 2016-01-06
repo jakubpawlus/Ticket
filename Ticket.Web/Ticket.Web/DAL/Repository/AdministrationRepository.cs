@@ -33,14 +33,14 @@ namespace Ticket.Web.DAL.Repository
 
         public void Update(UnitOfWork unit, User user)
         {
-            var userdb = unit.Context.Users.FirstOrDefault(z => z.UserId == user.UserId);
-            if (userdb == null)
+            var userdb = unit.Context.Users.Where(z => z.UserId == user.UserId).First();
+            if (userdb != null)
             {
-                userdb.FirstName = userdb.FirstName;
-                userdb.UserName = userdb.UserName;
-                userdb.Surname = userdb.Surname;
-                userdb.Email = userdb.Email;
-                userdb.Phone = userdb.Phone;
+                userdb.FirstName = user.FirstName;
+                userdb.UserName = user.UserName;
+                userdb.Surname = user.Surname;
+                userdb.Email = user.Email;
+                userdb.Phone = user.Phone;
                 unit.Context.SaveChanges();
             }
         }
